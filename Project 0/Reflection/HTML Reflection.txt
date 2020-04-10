@@ -1,0 +1,17 @@
+1. What is the difference between writing the HTML code in a text editor (such as VS Code, Sublime, Atom) and a word document?
+    Text editors prove more funtionalites that word document doesnt provide like the color scheme, word suggesstions when using variabels.
+    The even have have few extentions which are very handy.
+2. What is the purpose of the first tag in the HTML document?
+    It specifies that the file is a html document type.
+3. Which HTML tags in HTML do not have any visual appearance? What is the purpose of such tags?
+    It is the head tag. Only body tag data is shown in the apperence of the page but head contains metadata,
+    information like the styling file name, It has the title tag which is to be shown on top of the tab of the browser.
+4. Is it possible to create user-defined tags in HTML?
+    It is possible to create a user-defined tags in HTML.
+5. Which HTML tag is the most powerful? Hint: It enables the world wide web
+    Anchor tags, which are represented as <a></a>
+6. Is there a compiler or interpreter for the HTML code? Which software package does the job of taking HTML code as input, checks the tags and generates the output?
+    Any browser can be used as a output viewer. Sometimes, few IDE s provide with extentions needed.
+7. Which data structure is used to represent the HTML page in the browser?
+    DOM(Documetn Objet Model)
+    As a tree kind of structure, where tags are the nodes an the children are the tags present in that tag.

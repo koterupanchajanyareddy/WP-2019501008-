@@ -1,0 +1,13 @@
+1. How are DOM and CSS related?
+    Using DOM and CSS there are many possibilities for the creativity of a web page.
+    We can use any element to walk through the document - any HTML tag in fact.
+    DOM converts tags to tree, and dispaly. Css applyes specific style to these elemnets.
+2. Which is the most useful form of using CSS? style attribute, style tag or external style sheets?
+    External Style sheet is used more and is the best practice.
+3. I want to print a web page that I create and on the paper, I don’t want all the advertisements to be printed. Describe how CSS can be used for this purpose.
+    Using @media print we can be able to set display as none to not display tags when asked for a print.
+4. What exactly is responsive design a and why should I care? How is it relevant to software app development? Is the LMS software responsive?
+    It is away of arranging of the elemnets of the webpage as per the physical size of the diaplay unit.
+    The elemnets of the page rearrange based on the size allocated to the window allocated and size contrains to make page more infromative to the user.
+5. Is there any use for SASS? When is it most relevant?
+    Yes, there are many uses of using SASS as it reduces the code repetition that is found in CSS using concepts like inheritance, nesting etc.

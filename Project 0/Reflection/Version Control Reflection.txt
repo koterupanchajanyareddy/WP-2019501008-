@@ -1,0 +1,13 @@
+1. Version control adds additional steps like creating a repo, commit, etc., and it slows me down from completing my work. Is that overhead worthwhile?
+    Yes, it stores each and every step of the progres of the project. Which helps to get back if anything goes wrong at any step.
+    It aslo helps people to work parallelly on differnt feature of the same project.
+2. What is a good logical way to structure the commits when creating web pages?
+    Which enables us to know what changes are made from the previous commit.
+3. Is it good to include assets like images and videos in the git repo or is it better to keep them outside the repo? What if there are videos on the web page? How do we ignore them from staging and committing to the repo?
+    Well it depends ont he project. If the images are regurally updted and are need after they are updated, using seperate repo will be best. Space is money in the IT industry. So, It could be said that there is no need of the images to be stored in the repo.
+4. It looks like staging is not required before making a commits to the repository. Do you agree?
+    Staging makes commit job simple, in staging we find the files that are changed and then add them as commit. So, when adding a file to staging we specify which file need to be commited and this gives control of which file need to be commited too.
+5. Imagine a scenario where the old project files, that are previously in the version history, are deleted from the project folder and commits are done to the same repo. Will we lose the old files forever? How does this work?
+    No, as teh fileis previsoly commited, the fiel can be retrieved for the old commit.
+6. I’m working on a data science project with the Google collab. Collab already maintains version control. How is this different from using git? Which one is better? Is it possible to maintain collab files on git?
+    It is possible to have collab in the git hub as well. 
