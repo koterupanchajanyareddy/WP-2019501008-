@@ -1,0 +1,17 @@
+.Name, .Concepts {
+    background-color: whitesmoke;
+}
+.Name {
+    font-weight: bold;
+}
+table {
+    border: 2px solid black;
+}
+table td, table th {
+    text-align: center;
+    padding: "4px";
+    border-color: black;
+}
+table {
+    border-collapse: collapse;
+}
