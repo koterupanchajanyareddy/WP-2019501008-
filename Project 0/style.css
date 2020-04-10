@@ -1,0 +1,25 @@
+body{
+    background-color: aquamarine;
+    margin: 1%;
+}
+td, th {
+    text-align: center;
+    padding: 4px;
+    border: 2px solid black;
+    border-color: black;
+}
+table{
+    border:2px solid black;
+    border-collapse: collapse;
+}
+.Name {
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+
+.Concepts{
+    background-color: whitesmoke;
+}
+#tablehead1, #tablehead2{
+    background-color: aqua;
+}
