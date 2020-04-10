@@ -1,0 +1,24 @@
+$White_background: whitesmoke;
+$black : black;
+%concepts{
+    background-color: $White_background;
+}
+.Name{
+    @extend %concepts;
+    font-weight: bold;
+}
+.Concepts {
+    @extend %concepts;
+}
+
+table{
+    border:2px solid $balck;
+    td, th{
+        text-align: center;
+        padding: "4px";
+        border-color: $black;
+    }
+}
+table{
+    border-collapse: collapse;
+}
