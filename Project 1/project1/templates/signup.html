@@ -1,0 +1,82 @@
+<!Doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="container">
+     <header class="heading"> Registration-Form</header><hr></hr>
+	<div class="row ">
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label class="firstname">First Name :</label> </div>
+		         <div class="col-xs-8">
+		             <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control ">
+             </div>
+		      </div>
+		 </div>
+		 
+		 
+         <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+                     <label class="lastname">Last Name :</label></div>
+				<div class ="col-xs-8">	 
+		             <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control last">
+                </div>
+		     </div>
+		 </div>
+		 <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+		             <label class="mail" >Email :</label></div>
+			     <div class="col-xs-8"	>	 
+			          <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" >
+		         </div>
+		     </div>
+		 </div>
+          <div class="col-sm-12">
+		         <div class="row">
+				     <div class="col-xs-4">
+		 	              <label class="pass">Password :</label></div>
+				  <div class="col-xs-8">
+			             <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+				 </div>
+          </div>
+		  </div>
+		  
+         <div class="col-sm-12">
+		     
+		     <div class="col-sm-12">
+		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('register') }}">Submit</button>
+		   </div>
+		 </div>
+	 </div>
+	</div>
+	<div class="container-fluid" style="margin-top: 25px; margin-left: 25px;">
+		{% if details == 0 %}
+		<span></span>
+		{% else %}
+		<div
+		  class="jumbotron display-1"
+		  style="background-color: inherit; text-align: center;"
+		  id="thanks"
+		>
+		  Thanks for Registering
+		</div>
+		{% for det in details %}
+		<div
+		  class="display-3"
+		  style="margin-top: 25px; margin-left: 25px;"
+		  name="present"
+		>
+		  {{det}}
+		</div>
+		{% endfor %} {% endif %}
+	  </div>
+</body>		
+</html>
