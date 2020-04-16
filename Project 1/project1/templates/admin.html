@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 1</title>
+        
+    </head>
+    <body>
+        <h1>Welcome to the Admin(Project 1)</h1>
+        <ul>
+            {% for det in details %}
+            <li class="display-3"style="margin-top: 25px; margin-left: 25px;"name="present">
+                Username = {{det.username}} Password = {{det.password}} Time stamp = {{det.timestamp}}
+            </li    >
+            {% endfor %} 
+        </ul>
+    </body>
+</html>

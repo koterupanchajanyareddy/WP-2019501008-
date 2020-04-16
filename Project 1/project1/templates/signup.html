@@ -66,17 +66,9 @@
 		  style="background-color: inherit; text-align: center;"
 		  id="thanks"
 		>
-		  Thanks for Registering
+		 {{details[2]}} with username {{detail[0]}} and email {{detail[1]}}
 		</div>
-		{% for det in details %}
-		<div
-		  class="display-3"
-		  style="margin-top: 25px; margin-left: 25px;"
-		  name="present"
-		>
-		  {{det}}
-		</div>
-		{% endfor %} {% endif %}
+		{% endif %}
 	  </div>
 </body>		
 </html>
