@@ -4,11 +4,12 @@
      <meta charset="UTF-8">
      <title>Registration Form</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
 <body>
  <div class="container">
-     <header class="heading"> Registration-Form</header><hr></hr>
+	 <header class="heading"> Registration-Form</header><hr></hr>
+	 <form method = "post">
 	<div class="row ">
          <div class="col-sm-12">
              <div class="row">
@@ -48,15 +49,19 @@
 				 </div>
           </div>
 		  </div>
-		  
          <div class="col-sm-12">
 		     
 		     <div class="col-sm-12">
-		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('register') }}">Submit</button>
+		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('signup') }}">Submit</button>
 		   </div>
 		 </div>
 	 </div>
 	</div>
+</form>
+<div class="col-sm-12">
+	<button class="btn btn-warning" margin = "8px" formaction="{{ url_for('signin') }}">Sign in...</button>
+</div>
+
 	<div class="container-fluid" style="margin-top: 25px; margin-left: 25px;">
 		{% if details == 0 %}
 		<span></span>
@@ -66,7 +71,7 @@
 		  style="background-color: inherit; text-align: center;"
 		  id="thanks"
 		>
-		 {{details[2]}} with username {{detail[0]}} and email {{detail[1]}}
+		 {{details[2]}} with username {{details[0]}} and email {{details[1]}}
 		</div>
 		{% endif %}
 	  </div>

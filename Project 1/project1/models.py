@@ -1,5 +1,5 @@
-from flask_aqlalchemy import SQLAlchemy
-from datetime import datatime
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -11,9 +11,9 @@ class Users(db.Model):
     password = db.Column(db.String, nullable= False)
     timestamp = db.Column(db.DateTime, nullable = False)
 
-    def __init__(self, first_name, last_name, email_id, password, timestamp):
+    def __init__(self, first_name, last_name, email_id, password):
         self.first_name = first_name
         self.last_name = last_name
         self.email_id = email_id
         self.password = password
-        self.timestamp = datatime.now()
+        self.timestamp = datetime.now()
