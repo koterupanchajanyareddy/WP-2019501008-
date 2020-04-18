@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body>
+ <div class="container">
+	 <header class="heading"> Sign in</header><hr></hr>
+	 <form method = "post">
+	<div class="row ">
+        
+		 <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+		             <label class="mail" >Email :</label></div>
+			     <div class="col-xs-8"	>	 
+			          <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" >
+		         </div>
+		     </div>
+		 </div>
+          <div class="col-sm-12">
+		         <div class="row">
+				     <div class="col-xs-4">
+		 	              <label class="pass">Password :</label></div>
+				  <div class="col-xs-8">
+			             <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+				 </div>
+          </div>
+		  </div>
+         <div class="col-sm-12">
+		     
+		     <div class="col-sm-12">
+		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('signin') }}">Sign In</button>
+		   </div>
+		 </div>
+	 </div>
+	</div>
+</form>
+	<div class="container-fluid" style="margin-top: 25px; margin-left: 25px;">
+		{% if details == 0 %}
+        <span></span>
+        {% elif details == 1 %}
+        <div
+		  class="jumbotron display-1"
+		  style="background-color: inherit; text-align: center;"
+		  id="thanks"
+		>
+		 Wrong credentilas try again.
+		</div>
+		{% else %}
+		<div
+		  class="jumbotron display-1"
+		  style="background-color: inherit; text-align: center;"
+		  id="thanks"
+		>
+		 {{details[2]}} with username {{details[0]}} and email {{details[1]}}
+		</div>
+		{% endif %}
+	  </div>
+</body>		
+</html>

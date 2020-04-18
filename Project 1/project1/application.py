@@ -34,14 +34,19 @@ db.create_all()
 def index():
     return render_template("index.html")
 
-@app.route("/sign_up", methods = ["GET","POST"])
+@app.route("/signup", methods = ["GET","POST"])
 def signup():
     if request.method == "POST":
+        session["data"] = []
         data = request.form
         first_name = data.get("fname")
         last_name = data.get("lname")
         email_id= data.get("email")
         password = data.get("password")
+        session["data"].append(first_name)
+        session["data"].append(last_name)
+        session["data"].append(email_id)
+        session["data"].append(password)
         u = Users(first_name, last_name, email_id, password,)
         try:
             db.session.add(u)
@@ -60,8 +65,24 @@ def admin():
 @app.route("/signin", methods = ["GET", "POST"])
 def signin():
     if request.method == "POST":
-        data = requet.form
-        session(data) = list[]
+        session["data1"] = []
+        email = request.form.get("email")
+        password = request.form.get("password")
+        user = Users.query.get(email)
+        first_name = user.first_name
+        last_name = user.last_name
+        session["data1"].append(email)
+        session["data1"].append(first_name)
+        session["data1"].append(last_name)
+        if((email == user.email_id) and (password == user.password)):
+            return render_template("layout.html", details = [first_name, last_name, email])
+        else:
+            return render_template("signin.html",details = 1)
 
     else:
         return render_template("signin.html", details = 0)
+
+@app.route("/logout",methods = ["POST","GET"])
+def logout():
+    session.clear()
+    return render_template("signin.html",details = 0)
