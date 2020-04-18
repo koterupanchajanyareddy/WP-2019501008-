@@ -46,7 +46,7 @@ def signup():
         try:
             db.session.add(u)
         except:
-            return render_template("signup.html", details = [username, email,"Failed to registered."])
+            return render_template("signup.html", details = [first_name, email_id,"Failed to registered."])
         db.session.commit()
         return render_template("signup.html", details = [first_name, email_id, "Successfully Registered."])
     else:
@@ -57,7 +57,11 @@ def admin():
     users = Users.query.all()
     return render_template("admin.html",details = users)
 
-@app.route("/signin")
+@app.route("/signin", methods = ["GET", "POST"])
 def signin():
-    data = requet.form
-    
+    if request.method == "POST":
+        data = requet.form
+        session(data) = list[]
+
+    else:
+        return render_template("signin.html", details = 0)
