@@ -47,7 +47,7 @@ def signup():
         session["data"].append(last_name)
         session["data"].append(email_id)
         session["data"].append(password)
-        u = Users(first_name, last_name, email_id, password,)
+        u = Users(first_name, last_name, email_id, password)
         try:
             db.session.add(u)
         except:
@@ -75,7 +75,7 @@ def signin():
         session["data1"].append(first_name)
         session["data1"].append(last_name)
         if((email == user.email_id) and (password == user.password)):
-            return render_template("layout.html", details = [first_name, last_name, email])
+            return render_template("review.html", details = [first_name, last_name, email])
         else:
             return render_template("signin.html",details = 1)
 

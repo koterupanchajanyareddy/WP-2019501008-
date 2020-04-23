@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Project 1</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid" style="margin-top: 25px; margin-left: 25px;">
+            <div
+              class="jumbotron display-1"
+              style="background-color: inherit; text-align: center;"
+              id="thanks"
+            >Hi, {{details[0]}} {{details[1]}} Loged in with {{details[2]}}
+            </div>
+          </div>
+          <form method = "post">
+        <div class="col-sm-12">
+            <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('logout') }}">Logout</button>
+      </div>
+      </form>
+      <form method = "post">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="lastname">Book ISBN number</label></div>
+               <div class ="col-xs-8">	 
+                    <input type="text" name="isbn" id="isbn" placeholder="Enter your Last Name" class="form-control last">
+               </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="lastname">review</label></div>
+               <div class ="col-xs-8">	 
+                    <input type="text" name="review" id="review" placeholder="Enter your Last Name" class="form-control last">
+               </div>
+            </div>
+        </div>
+      </form>
+    </body>
+</html>
