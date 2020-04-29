@@ -4,12 +4,42 @@
      <meta charset="UTF-8">
      <title>Registration Form</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<script>
+		function check(){
+    if(validation)
+    document.getElementById("form_id").submit();
+    else
+    alert("Please check your format of username and password");
+}
+
+function validation() {
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var emailReg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    if (password === '' || email === '') {
+    alert("Please fill all fields...!!!!!!");
+    return false;
+    } else if (!(email).match(emailReg)) {
+    alert("Invalid Email...!!!!!!");
+    return false;
+    }else if(len(password)< 6){
+        alert("Invalid password....");
+        return false;
+    }else if(!(password).match(decimal)){
+        alert("Invalid password....");
+        return false;
+    } else {
+    return true;
+    }
+}
+	</script>
 </head>
 <body>
  <div class="container">
 	 <header class="heading"> Sign in</header><hr></hr>
-	 <form method = "post">
+	 <form method = "post" id = "form_id">
 	<div class="row ">
         
 		 <div class="col-sm-12">
@@ -33,7 +63,7 @@
          <div class="col-sm-12">
 		     
 		     <div class="col-sm-12">
-		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('signin') }}">Sign In</button>
+		         <input type = "submit" class="btn btn-warning" margin = "8px" onclick="check()" placeholder="Signin" ></input>
 		   </div>
 		 </div>
 	 </div>
