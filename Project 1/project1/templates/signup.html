@@ -1,0 +1,116 @@
+<!Doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<script>
+		function check_login() {
+		console.log("im g=here")
+		var password = document.querySelector("#password").value;
+		var email = document.querySelector("#email").value;
+		var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+		if (password === '' || email === '') {
+		alert("Please fill all fields...!!!!!!");
+		return false;
+		} else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(email)) {
+		alert("Invalid Email...!!!!!!");
+		return false;
+		}else if(!(password).match(decimal)){
+			alert("Invalid password....");
+			return false;
+		} else {
+		return true;}
+		if(!/[a-z]/.test(password)){
+			aler("Please use alteast one small letter");
+			return false;
+		}else if(!/[a-z]/.test(password)){
+			alert("Please use atleast one Captial letter");
+			return false;
+		}else if(!/[0-9]/.test(password)){
+			alert("Please use atleast one number");
+			return false;
+		}else if(!/[!@#\$%\^\&*\)\(+=._-]/.test(password)){
+			alert("Please use atleast one symbol");
+			return false;
+		}else if(password.length < 6){
+			alert("Please enter password greater than 6 charaters");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	</script>
+</head>
+<body>
+ <div class="container">
+	 <header class="heading"> Registration-Form</header><hr></hr>
+	 <form method = "post">
+	<div class="row ">
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label class="firstname">First Name :</label> </div>
+		         <div class="col-xs-8">
+		             <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control ">
+             </div>
+		      </div>
+		 </div>
+		 
+		 
+         <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+                     <label class="lastname">Last Name :</label></div>
+				<div class ="col-xs-8">	 
+		             <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control last">
+                </div>
+		     </div>
+		 </div>
+		 <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+		             <label class="mail" >Email :</label></div>
+			     <div class="col-xs-8"	>	 
+			          <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" >
+		         </div>
+		     </div>
+		 </div>
+          <div class="col-sm-12">
+		         <div class="row">
+				     <div class="col-xs-4">
+		 	              <label class="pass">Password :</label></div>
+				  <div class="col-xs-8">
+			             <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+				 </div>
+          </div>
+		  </div>
+         <div class="col-sm-12">
+		     
+		     <div class="col-sm-12">
+		         <button class="btn btn-warning" margin = "8px" formaction="{{ url_for('signup') }}">Submit</button>
+		   </div>
+		 </div>
+	 </div>
+	</div>
+</form>
+<div class="col-sm-12">
+	<button class="btn btn-warning" margin = "8px" onclick= "return check_login()" formaction="{{ url_for('signin') }}">Sign in...</button>
+</div>
+
+	<div class="container-fluid" style="margin-top: 25px; margin-left: 25px;">
+		{% if details == 0 %}
+		<span></span>
+		{% else %}
+		<div
+		  class="jumbotron display-1"
+		  style="background-color: inherit; text-align: center;"
+		  id="thanks"
+		>
+		 {{details[2]}} with username {{details[0]}} and email {{details[1]}}
+		</div>
+		{% endif %}
+	  </div>
+</body>		
+</html>
