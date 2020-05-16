@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TODO List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/app.css">
+    <script>
+        // if(!localStorage.getItem("counter"))
+        //     localStorage.setItem("counter", 0);
+        
+        // if(!localStorage.getItem("tasks"))
+        //     localStorage.setItem("tasks", []);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("#list").innerHTML = localStorage.getItem('tasks')
+            
+            
+            document.querySelector("#task_submit").onsubmit = () => {
+                const li = document.createElement("li");
+                // let count = localStorage.getItem('counter')
+                // let tasks = localStorage.getItem("tasks")
+                li.innerHTML = document.querySelector("#text").value;
+                li.setAttribute("onclick", "function change(){strike_text(this)}")
+                // li.setAttribute(value, count)
+                document.querySelector('#list').append(li);
+
+                document.querySelector("#text").value='';
+                
+                // tasks[count] = li
+                // count++
+                return false;
+            };
+        });
+        function strike_text(element){
+            const data = element.innerHTML.value
+            const tag = document.createElement("strike")
+            tag.innerHTML = data
+            tasks[this.value] = tag
+        };
+    </script>
+</head>
+<body>
+    <header></header>
+        <h1>ToDo List</h1>
+        <ul id="list">
+        </ul>
+        <form id ="task_submit">
+            <input id="text"type="text">
+            <input type="submit">
+        </form>
+</body>
+</html> 
